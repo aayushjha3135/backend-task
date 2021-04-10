@@ -1,0 +1,12 @@
+// DELETE
+app.delete('/users/:id', (req, res) => {
+    readFile(data => {
+      // add the new user
+      const userId = req.params['id'];
+      delete data[userId];
+  
+      writeFile(JSON.stringify(data, null, 2), () => {
+        res.status(200).send(`users id:${userId} removed`);
+      });
+    }, true);
+  });
